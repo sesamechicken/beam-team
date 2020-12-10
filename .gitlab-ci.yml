@@ -1,0 +1,14 @@
+image: docker-prod.registry.kroger.com/library/node:13.8.0-slim
+pages:
+  tags:
+  - kubernetes
+  stage: deploy
+  script:
+  - yarn
+  - yarn build:pages
+  - mv dist ./public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
