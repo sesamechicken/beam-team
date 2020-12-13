@@ -2,7 +2,6 @@ import React, { Component} from 'react';
 import { Container } from '@material-ui/core';
 import Example from './components/example';
 import Roster from './components/roster';
-import ConnectedComponentExample from './components/connected_component';
 import styles from './app.css';
 import members from './members.json'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
@@ -28,7 +27,7 @@ function App(){
     return(
       <ThemeProvider theme={theme}>
         <CssBaseline>
-          <Container>
+          <Container maxWidth='lg'>
             <div>logo</div>
             <div>stats</div>
             <Roster team={members} />

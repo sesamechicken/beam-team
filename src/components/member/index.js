@@ -1,15 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Avatar, Card, CardContent, CardMedia, CardHeader, Typography } from '@material-ui/core';
-import './member.css';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: 345,
-  },
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
+  },
+  header: {
+    backgroundColor: '#555'
   }
 }));
 
@@ -20,6 +19,7 @@ export default function Member (props) {
   return(
     <Card raised className={classes.root}>
       <CardHeader
+        className={classes.header}
         title={
           <Typography variant='h5'>{name}</Typography>
         }

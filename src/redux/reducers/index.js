@@ -1,6 +1,6 @@
 const initialState = {
   loading: false,
-  items: ['eggs', 'milk', 'bread', 'ointment']
+  members: []
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -10,7 +10,12 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         loading: true
       };
-
+    
+    case 'LOAD_STATS':
+      return {
+        ...state,
+        members: [...state.members, action.items]
+      }
     case 'ADD_TO_LIST':
       return {
         ...state,
