@@ -1,22 +1,25 @@
 import axios from 'axios';
 
-const loadStats = (member) => (dispatch, getState) => {
+const loadStats = (member) => async (dispatch, getState) => {
   dispatch({
     type: 'LOADING',
-    loading: true,
-    things: getState()
+    loading: true
   });
 
-  const stats = axios(`https://fortnite-api.com/v1/stats/br/v2?name=${member}`).then((data) => {
-    return data;
-  });
-
+  let stats;
+  try {
+    stats = await axios(`https://fortnite-api.com/v1/stats/br/v2?name=${member}`);
+  } catch(e){
+    stats = e
+  }
   dispatch({
     type: 'LOAD_STATS',
-    member: { stats}
+    loading: false,
+    stats: ['stats'],
   });
+
 };
 
 export default {
-  addToList
+  loadStats
 };
