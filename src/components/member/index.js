@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import { Avatar, Card, CardContent, CardMedia, CardHeader, Typography } from '@material-ui/core';
 
@@ -12,9 +13,18 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Member (props) {
+const getStats = ({username}) => {
+  console.log(username)
+  // This is where I will call for the API
+}
+
+
+export const Member = (props) => {
   const classes = useStyles();
   const { avatar, name, bio } = props.info;
+  const stats = getStats(props.info);
+
+  console.log(props)
 
   return(
     <Card raised className={classes.root}>
@@ -41,3 +51,18 @@ export default function Member (props) {
     </Card>
   )
 }
+
+
+const mapStateToProps = (state) => {
+  return {
+    state
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadStats: (member) => dispatch(actions.loadStats(member))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Member);

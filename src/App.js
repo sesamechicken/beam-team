@@ -22,8 +22,6 @@ function App(){
     [prefersDarkMode],
   );
 
-
-    console.log(members)
     return(
       <ThemeProvider theme={theme}>
         <CssBaseline>

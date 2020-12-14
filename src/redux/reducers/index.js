@@ -1,6 +1,7 @@
 const initialState = {
   loading: false,
-  members: []
+  error: '',
+  stats: []
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -14,14 +15,10 @@ const rootReducer = (state = initialState, action) => {
     case 'LOAD_STATS':
       return {
         ...state,
-        members: [...state.members, action.items]
-      }
-    case 'ADD_TO_LIST':
-      return {
-        ...state,
         loading: false,
-        items: [...state.items, action.item]
-      };
+        stats: ['something']
+      }
+
 
     default:
       return state;
