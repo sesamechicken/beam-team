@@ -11,8 +11,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack --mode=production",
-    "build:pages": "webpack --mode=production --output-public-path=''"
+    "build": "webpack --mode=production"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.2",

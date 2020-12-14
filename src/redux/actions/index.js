@@ -3,8 +3,7 @@ import axios from 'axios';
 const loadStats = (member) => async (dispatch, getState) => {
   dispatch({
     type: 'LOADING',
-    loading: true,
-    things: getState()
+    loading: true
   });
 
   let stats;
