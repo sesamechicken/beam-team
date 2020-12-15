@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { render } from 'react-dom';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import actions from '../../redux/actions';
 import Member from '../member';
 
 const useStyles = makeStyles((theme) => ({
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Roster = (props) => {
   const classes = useStyles();
-  const {team} = props;
+  const { team } = props;
 
   return(
     <div className={classes.root}>
@@ -29,11 +29,17 @@ const Roster = (props) => {
         team.map((teammate) => 
         <Grid className={classes.paper} key={teammate.name} sm={6} item md={4}>
           <Member info={teammate} />
-          </Grid>)
+        </Grid>)
       }
       </Grid>
     </div>
   )
 };
 
-export default Roster;
+const mapStateToProps = ({team = []}) => {
+  return {
+    team
+  };
+};
+
+export default connect(mapStateToProps)(Roster);
