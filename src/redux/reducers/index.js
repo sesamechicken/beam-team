@@ -6,20 +6,20 @@ const team = members.map((person) => {
 })
 
 const initialState = {
-  loading: false,
+  loading: true,
   error: '',
   team: people,
-  stats: []
+  stats: [],
+  news: {}
 };
 
 const rootReducer = (state = initialState, action) => {
-  console.log(action)
+
   switch (action.type) {
     case 'LOADING':
       return {
         ...state,
-        loading: true,
-        stats: [...state.stats]
+        loading: true
       };
     
     case 'LOAD_STATS':
@@ -27,6 +27,13 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         stats: [...state.stats, action.stats]
+      }
+
+    case 'LOAD_NEWS':
+      return {
+        ...state,
+        loading: false,
+        news: action.news.data.br
       }
 
 
