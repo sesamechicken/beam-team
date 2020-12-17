@@ -1,0 +1,7 @@
+@font-face{
+  font-family: 'BurbankBigCondensed-Black';
+  src: local('BurbankBigCondensed-Black'), url('./static/fonts/BurbankBigCondensed-Black.woff') format('woff');
+}
+.fortnite {
+  font-family: 'BurbankBigCondensed-Black'
+}

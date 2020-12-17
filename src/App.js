@@ -1,38 +1,27 @@
 import React, { Component} from 'react';
 import { Container } from '@material-ui/core';
-import Example from './components/example';
-import Roster from './components/roster';
-import styles from './app.css';
-import members from './members.json'
+
+import { BrowserRouter as Router, Link, useHistory } from 'react-router-dom';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Routes from './routes';
+import './App.css';
 
-
-function App(){
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-
-  const theme = React.useMemo(
-    () =>
-      createMuiTheme({
-        palette: {
-          type: prefersDarkMode ? 'dark' : 'light',
-        },
-      }),
-    [prefersDarkMode],
-  );
-
-    return(
-      <ThemeProvider theme={theme}>
+function App(props){
+  return(
+    <Router>
         <CssBaseline>
-          <Container maxWidth='lg'>
-            <div>logo</div>
-            <div>stats</div>
-            <Roster team={members} />
+          <Container className='main-body' maxWidth='lg'>
+            <Routes />
           </Container>
         </CssBaseline>
-      </ThemeProvider>
-    );
+    </Router>
+  );
 }
 
 export default App;

@@ -1,10 +1,21 @@
+import members from '../../members.json';
+
+const people = [];
+const team = members.map((person) => {
+  people.push(person)
+})
+
 const initialState = {
-  loading: false,
+  loading: true,
   error: '',
-  stats: []
+  team: people,
+  stats: [],
+  news: '',
+  itemShop: ''
 };
 
 const rootReducer = (state = initialState, action) => {
+
   switch (action.type) {
     case 'LOADING':
       return {
@@ -16,8 +27,21 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        stats: ['something']
+        stats: [...state.stats, action.stats]
       }
+
+    case 'LOAD_NEWS':
+      return {
+        ...state,
+        loading: false,
+        news: action.news.data.br
+      }
+      case 'LOAD_ITEMSHOP':
+        return {
+          ...state,
+          loading: false,
+          itemShop: action.itemShop.data
+        }
 
 
     default:
