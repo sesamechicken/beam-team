@@ -10,7 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Routes from './routes';
-import './App.css';
+import './app.css';
 
 function App(props){
   return(
