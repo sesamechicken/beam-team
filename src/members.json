@@ -17,7 +17,7 @@
       {"title": "warzone"},
       {"title": "fortnite"}
     ],
-    "platform": "switch",
+    "platform": "nintendo",
     "username": "johnblack_05",
     "avatar": "https://cdn-0.skin-tracker.com/images/fnskins/icon/fortnite-fishstick-outfit.png",
     "bio": "Never follows the team - always dies first. Leeroy Jenkins!!!!"
@@ -28,7 +28,40 @@
       {"title": "fortnite"},
       {"title": "minecraft"}
     ],
-    "platform": "switch",
+    "platform": "pc",
+    "username": "kmanrock09",
+    "avatar": "https://skin-tracker.com/images/fnskins/icon/fortnite-mancake-outfit.png",
+    "bio": "Sticks with the team, but never wants to play arena"
+  },
+  {
+    "name": "James",
+    "games": [
+      {"title": "fortnite"},
+      {"title": "minecraft"}
+    ],
+    "platform": "xbox",
+    "username": "baseball-98",
+    "avatar": "https://skin-tracker.com/images/fnskins/icon/fortnite-mancake-outfit.png",
+    "bio": "Sticks with the team, but never wants to play arena"
+  },
+  {
+    "name": "Owen",
+    "games": [
+      {"title": "fortnite"},
+      {"title": "minecraft"}
+    ],
+    "platform": "xbox",
+    "username": "Mungik79",
+    "avatar": "https://skin-tracker.com/images/fnskins/icon/fortnite-mancake-outfit.png",
+    "bio": "Sticks with the team, but never wants to play arena"
+  },
+  {
+    "name": "Zach",
+    "games": [
+      {"title": "fortnite"},
+      {"title": "minecraft"}
+    ],
+    "platform": "xbox",
     "username": "kmanrock09",
     "avatar": "https://skin-tracker.com/images/fnskins/icon/fortnite-mancake-outfit.png",
     "bio": "Sticks with the team, but never wants to play arena"

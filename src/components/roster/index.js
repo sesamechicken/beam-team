@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: 'center',
     color: theme.palette.text.secondary,
   },
 }));
@@ -23,7 +22,7 @@ const Roster = (props) => {
 
   return(
     <div className={classes.root}>
-      <h2>Beam Team Team</h2>
+      <h2>The Beam Team</h2>
       <Grid alignContent='center' container spacing={3}>
       {
         team.map((teammate) => 

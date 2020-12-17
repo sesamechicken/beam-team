@@ -10,7 +10,8 @@ const initialState = {
   error: '',
   team: people,
   stats: [],
-  news: {}
+  news: '',
+  itemShop: ''
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -35,6 +36,12 @@ const rootReducer = (state = initialState, action) => {
         loading: false,
         news: action.news.data.br
       }
+      case 'LOAD_ITEMSHOP':
+        return {
+          ...state,
+          loading: false,
+          itemShop: action.itemShop.data
+        }
 
 
     default:

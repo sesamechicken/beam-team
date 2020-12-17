@@ -14,6 +14,15 @@ const loadStats = (member) => async (dispatch, getState) => {
 
 
 const loadNews = () => async  (dispatch, getState) => {
+  const state = getState();
+
+  // Don't make the call more than we need to
+  if(state.news){
+    return {
+      ...state
+    }
+  }
+
   dispatch({
     type: 'LOADING',
     loading: true
@@ -28,7 +37,32 @@ const loadNews = () => async  (dispatch, getState) => {
   })
 }
 
+const loadItemShop = () => async  (dispatch, getState) => {
+  const state = getState();
+
+  // Don't make the call more than we need to
+  if(state.itemShop){
+    return {
+      ...state
+    }
+  }
+
+  dispatch({
+    type: 'LOADING',
+    loading: true
+  });
+
+  const itemShop = await axios('https://fortnite-api.com/v2/shop/br');
+
+  return dispatch({
+    type: 'LOAD_ITEMSHOP',
+    itemShop: itemShop.data,
+    loading: false
+  })
+}
+
 export {
   loadStats,
-  loadNews
+  loadNews,
+  loadItemShop
 };

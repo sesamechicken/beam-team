@@ -5,7 +5,7 @@ const Profile = (props) => {
   let { id } = useParams();
 
   console.log(`profile says ${JSON.stringify(props, null, 2)} - i will fetch stats for ${id}`)
-  return <div>This is your profile. It will be magical</div>;
+  return <div>Soon. Very soon.</div>;
 }
 
 export default Profile;

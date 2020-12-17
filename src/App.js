@@ -12,19 +12,12 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Routes from './routes';
 import './App.css';
 
-
-
-
-
-
 function App(props){
-
-
   return(
     <Router>
         <CssBaseline>
           <Container className='main-body' maxWidth='lg'>
-          <Routes />
+            <Routes />
           </Container>
         </CssBaseline>
     </Router>
