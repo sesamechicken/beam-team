@@ -33,7 +33,7 @@ const Roster = (props) => {
 
   return(
     <div className={classes.root}>
-      <Typography className={[classes.fortnite, classes.news]} variant='h4'>The Beam Team</Typography>
+      <Typography className={`${classes.fortnite} ${classes.news}`} variant='h4'>The Beam Team</Typography>
       <Grid alignContent='center' container spacing={3}>
       {
         team.map((teammate) => 

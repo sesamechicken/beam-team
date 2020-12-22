@@ -77,6 +77,7 @@ const Member = (props) => {
         {
           services.map((svc) =>
           <Chip
+            key={name+svc}
             icon={<img className={classes.icon} alt={svc.service} src={getPlatformIcon(props, svc.service)} />}
             label={svc?.service?.toUpperCase()}
           /> 
