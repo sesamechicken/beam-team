@@ -1,7 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+
 
 module.exports = {
   mode: 'development',
@@ -28,6 +30,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'template.html'
     }),
+    new CopyPlugin({
+      patterns: [
+        { from: '_redirects', to: '.' }
+      ],
+    })
   ],
   module: {
     rules: [
@@ -67,7 +74,13 @@ module.exports = {
       {
         test: /\.(woff|woff2|ttf|otf)$/,
         loader: 'file-loader'
-      },
+      }
     ]
+  },
+  optimization: {
+    splitChunks: {
+      // include all types of chunks
+      chunks: 'all'
+    }
   }
 }

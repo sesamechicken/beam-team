@@ -6,6 +6,12 @@
       {"title": "fortnite"},
       {"title": "minecraft"}
     ],
+    "services": [
+      {
+        "service": "twitch",
+        "username": "sesamechicken1"
+      }
+    ],
     "username": "sesamechicken1",
     "platform": "ps4",
     "avatar": "https://cdn-0.skin-tracker.com/images/fnskins/icon/fortnite-demogorgon-outfit.png",
@@ -28,16 +34,22 @@
       {"title": "fortnite"},
       {"title": "minecraft"}
     ],
+    "services": [
+      {
+        "service": "twitch",
+        "username": "sesamechicken1"
+      }
+    ],
     "platform": "pc",
     "username": "kmanrock09",
-    "avatar": "https://skin-tracker.com/images/fnskins/icon/fortnite-mancake-outfit.png",
+    "avatar": "https://cdn-0.skin-tracker.com/images/fnskins/icon/fortnite-drift-outfit.png",
     "bio": "Sticks with the team, but never wants to play arena"
   },
   {
     "name": "James",
     "games": [
       {"title": "fortnite"},
-      {"title": "minecraft"}
+      {"title": "warzone"}
     ],
     "platform": "xbox",
     "username": "baseball-98",
@@ -48,7 +60,7 @@
     "name": "Owen",
     "games": [
       {"title": "fortnite"},
-      {"title": "minecraft"}
+      {"title": "warzone"}
     ],
     "platform": "xbox",
     "username": "Mungik79",
@@ -59,7 +71,7 @@
     "name": "Zach",
     "games": [
       {"title": "fortnite"},
-      {"title": "minecraft"}
+      {"title": "warzone"}
     ],
     "platform": "xbox",
     "username": "kmanrock09",

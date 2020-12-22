@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Grid } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Member from '../member';
 
@@ -13,6 +13,17 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     color: theme.palette.text.secondary,
   },
+  fortnite: {
+    fontFamily: 'BurbankBigCondensed-Black'
+  },
+  news: {
+    color: '#3f51b5',
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    padding: '10px 10px 0 10px',
+    borderRadius: '22px',
+    textAlign: 'center',
+    marginBottom: '1em'
+  },
 }));
 
 
@@ -22,7 +33,7 @@ const Roster = (props) => {
 
   return(
     <div className={classes.root}>
-      <h2>The Beam Team</h2>
+      <Typography className={[classes.fortnite, classes.news]} variant='h4'>The Beam Team</Typography>
       <Grid alignContent='center' container spacing={3}>
       {
         team.map((teammate) => 
