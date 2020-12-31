@@ -10,6 +10,7 @@ import Home from '../components/home';
 import Roster from '../components/roster';
 import Profile from '../components/profile';
 import ItemShop from '../components/itemshop';
+import Footer from '../components/footer';
 import logo from '../static/logo.png';
 
 const useStyles = makeStyles((theme) => ({
@@ -46,7 +47,7 @@ const Routes = (props) => {
             </IconButton>
           </Grid>
           <Grid item xs className={classes.logo}>
-            <img src={logo} />
+            <Link to='/'><img src={logo} /></Link>
           </Grid>
           <Grid item xs></Grid>
         </Grid>
@@ -79,6 +80,7 @@ const Routes = (props) => {
         <Route exact path='/members' render={(props) => <Roster {...props} />} />
         <Route path='/members/:id' render={(props) => <Profile {...props} />} />
       </Switch>
+      <Footer />
     </div>
   );
 };

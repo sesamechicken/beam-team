@@ -31,7 +31,6 @@ const Member = (props) => {
   const classes = useStyles();
 
   const getPlatformIcon = (props, platform) => {
-    console.log(`platform icon for ${props.info.name} is ${platform}`)
     switch (platform){
       case 'ps4':
         return ps4;
