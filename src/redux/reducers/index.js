@@ -9,7 +9,6 @@ const initialState = {
   loading: true,
   error: '',
   team: people,
-  stats: [],
   news: '',
   itemShop: ''
 };
@@ -26,18 +25,10 @@ const rootReducer = (state = initialState, action) => {
     case 'LOAD_STATS':
       const user = state.team.filter((user) => user.username === action.id);
       const userWithStats = Object.assign(...user, {stats: action.stats});
-      const userIndex = state.team.findIndex((user) => user.username === action.id);
-      const teamList = state.team[userIndex] = userWithStats;
-      
-      console.log(teamList)
-
-      const userList = [...state.team, userWithStats];
-      
-      console.log(userWithStats)
 
       return {
         ...state,
-        team: userList,
+        team: state.team,
         loading: false,
       }
 

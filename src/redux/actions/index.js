@@ -52,19 +52,10 @@ const loadItemShop = () => async  (dispatch, getState) => {
 const loadStats = (id) => async (dispatch, getState) => {
   const state = getState();
 
-  // Don't make the call more than we need to
-  // if (state.itemShop) {
-  //   return {
-  //     ...state
-  //   }
-  // }
-
   dispatch({
     type: 'LOADING',
     loading: true
   });
-
-  
 
   const userStats = await axios(`https://fortnite-api.com/v1/stats/br/v2?name=${id}`);
 
