@@ -3,5 +3,8 @@
   src: local('BurbankBigCondensed-Black'), url('./static/fonts/BurbankBigCondensed-Black.woff') format('woff');
 }
 .fortnite {
-  font-family: 'BurbankBigCondensed-Black'
+  font-family: 'BurbankBigCondensed-Black' !important;
+}
+.m1 {
+  margin: 1em;
 }
