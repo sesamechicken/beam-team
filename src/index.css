@@ -8,3 +8,15 @@
 .m1 {
   margin: 1em;
 }
+
+.MuiLinearProgress-root {
+  height: 16px !important;
+}
+
+.icon {
+  max-width: 32px;
+}
+
+h4.MuiTypography-root.fortnite.MuiTypography-h4{
+  margin-top: 1em;
+}

@@ -23,7 +23,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#fff'
   },
   root: {
-    flexGrow: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
   },
   logo: {
     textAlign: 'center',
@@ -51,7 +53,6 @@ const Routes = (props) => {
           </Grid>
           <Grid item xs></Grid>
         </Grid>
-      </div>
       <Drawer elevation={10} anchor='left' open={drawerOpen} onClose={() => toggleDrawer(false)}>
         <List className={classes.drawer}>
           <ListItem button component={Link} to='/' onClick={() => toggleDrawer(false)}>
@@ -81,6 +82,7 @@ const Routes = (props) => {
         <Route path='/members/:id' render={(props) => <Profile {...props} />} />
       </Switch>
       <Footer />
+      </div>
     </div>
   );
 };

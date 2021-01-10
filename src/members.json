@@ -3,7 +3,6 @@
     "name": "Simon",
     "games": [
       {"title": "warzone"},
-      {"title": "fortnite"},
       {"title": "minecraft"}
     ],
     "services": [
@@ -20,8 +19,7 @@
   {
     "name": "John",
     "games": [
-      {"title": "warzone"},
-      {"title": "fortnite"}
+      {"title": "warzone"}
     ],
     "platform": "xbox",
     "username": "johnblack_05",
@@ -31,7 +29,6 @@
   {
     "name": "Kalean",
     "games": [
-      {"title": "fortnite"},
       {"title": "minecraft"}
     ],
     "services": [
@@ -48,7 +45,6 @@
   {
     "name": "James",
     "games": [
-      {"title": "fortnite"},
       {"title": "warzone"}
     ],
     "platform": "xbox",
@@ -59,7 +55,6 @@
   {
     "name": "Owen",
     "games": [
-      {"title": "fortnite"},
       {"title": "warzone"}
     ],
     "platform": "xbox",
@@ -70,7 +65,6 @@
   {
     "name": "Zach",
     "games": [
-      {"title": "fortnite"},
       {"title": "warzone"}
     ],
     "platform": "xbox",
