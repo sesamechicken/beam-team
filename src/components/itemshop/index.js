@@ -66,7 +66,7 @@ const ItemShop = (props) => {
 
   return(
     <React.Fragment>
-      <Typography className={[classes.fortnite, classes.news]} variant='h4'>Current Item Shop</Typography>
+      <Typography className={`${classes.fortnite} ${classes.news}`} variant='h4'>Current Item Shop</Typography>
       <Typography className={`${classes.fortnite}`} variant="subtitle1">
         <span className={classes.white}>Updated on {date && format(date, 'PPpp')}</span>
       </Typography>

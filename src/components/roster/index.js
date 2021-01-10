@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Member from '../member';
+import shuffle from 'lodash.shuffle';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,13 +31,15 @@ const useStyles = makeStyles((theme) => ({
 const Roster = (props) => {
   const classes = useStyles();
   const { team } = props;
+  // Shuffle the team list so nobody is always at the top
+  const teamList = shuffle(team)
 
   return(
     <div className={classes.root}>
-      <Typography className={[classes.fortnite, classes.news]} variant='h4'>The Beam Team</Typography>
+      <Typography className={`${classes.fortnite} ${classes.news}`} variant='h4'>The Beam Team</Typography>
       <Grid alignContent='center' container spacing={3}>
       {
-        team.map((teammate) => 
+        teamList.map((teammate) => 
         <Grid className={classes.paper} key={teammate.name} sm={6} item md={4}>
           <Member info={teammate} />
         </Grid>)
