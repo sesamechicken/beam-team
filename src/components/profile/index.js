@@ -147,7 +147,7 @@ const Profile = (props) => {
           <Grid item container>
               <Grid item xs={12} sm={4}>
                 <Typography variant='h4' className='fortnite'>Wins</Typography>
-                <Typography variant='h5' className='fortnite'>{parseInt(stats?.stats.all.overall.wins.toLocaleString())}</Typography>
+                <Typography variant='h5' className='fortnite'>{stats?.stats.all.overall.wins.toLocaleString()}</Typography>
               </Grid>
               <Grid item xs={12} sm={4}>
                 <Typography variant='h4' className='fortnite'>Win Rate</Typography>
