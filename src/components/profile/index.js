@@ -46,8 +46,8 @@ const Profile = (props) => {
     </div>
   );
   const { state, loading } = props;
-  const user = state.team.filter((user) => user.username === id)[0];
-  const { stats } = user;
+  const user = state.team?.filter((user) => user.username === id)[0];
+  const { stats = undefined } = user;
   const stats_battlePass = [
     {
       x: "Complete",
@@ -59,7 +59,7 @@ const Profile = (props) => {
     }
   ]
   return (
-    state.loading && !stats ? loader() : 
+    state.loading && user?.stats == null && stats == null ? loader() : 
     <div>
       <Typography variant="h2" className={`${classes.fortnite} ${classes.white}`}>Profile - {user.name}</Typography>
       <Paper elevation={3}>
@@ -86,7 +86,7 @@ const Profile = (props) => {
           </Grid>
           <Grid item xs={6}>
             <Typography variant='body2'>Services: </Typography>
-            {user.services.map((service, index) => 
+            {user.services && user.services?.map((service, index) => 
               <Chip color="primary" key={service+index} label={service.service} />
             )}
           </Grid>
@@ -99,7 +99,7 @@ const Profile = (props) => {
             <Typography variant="h3" className="fortnite">Battlepass Stats</Typography>
             <Box display="flex" alignItems="center"className="m1">
               <Box width="100%" mr={1}>
-                <LinearProgress variant="determinate" value={stats?.battlePass?.level} />
+                <LinearProgress variant="determinate" value={stats?.battlePass?.level || 0} />
               </Box>
               <Box minWidth={35}>
                 <Typography variant="body2" color="textSecondary">{`LVL ${stats?.battlePass?.level}`}</Typography>
@@ -118,23 +118,23 @@ const Profile = (props) => {
             <Grid item container spacing={3}>
               <Grid item xs={4} sm={4}>
                 <Typography variant='h4' className='fortnite'>Kills</Typography>
-                <Typography variant='h5' className='fortnite'>{stats.stats.all.overall.kills.toLocaleString()}</Typography>
+                <Typography variant='h5' className='fortnite'>{stats?.stats?.all.overall.kills.toLocaleString()}</Typography>
               </Grid>
               <Grid item xs={4} sm={4}>
                 <Typography variant='h4' className='fortnite'>Deaths</Typography>
-                <Typography variant='h5' className='fortnite'>{stats.stats.all.overall.deaths.toLocaleString()}</Typography>
+                <Typography variant='h5' className='fortnite'>{stats?.stats?.all.overall.deaths.toLocaleString()}</Typography>
               </Grid>
               <Grid item xs={4} sm={4}>
                 <Typography variant='h4' className='fortnite'>KD</Typography>
-                <Typography variant='h5' className='fortnite'>{stats.stats.all.overall.kd}</Typography>
+                <Typography variant='h5' className='fortnite'>{stats?.stats?.all.overall.kd}</Typography>
               </Grid>
               <Grid item xs={4}>
                 <Typography variant='h4' className='fortnite'>Kills per match</Typography>
-                <Typography variant='h5' className='fortnite'>{stats.stats.all.overall.killsPerMatch.toLocaleString()}</Typography>
+                <Typography variant='h5' className='fortnite'>{stats?.stats?.all.overall.killsPerMatch.toLocaleString()}</Typography>
               </Grid>
               <Grid item xs={4}>
                 <Typography variant='h4' className='fortnite'>Kills per minute</Typography>
-                <Typography variant='h5' className='fortnite'>{stats.stats.all.overall.killsPerMin.toLocaleString()}</Typography>
+                <Typography variant='h5' className='fortnite'>{stats?.stats?.all.overall.killsPerMin.toLocaleString()}</Typography>
               </Grid>
             </Grid>
             
@@ -147,35 +147,35 @@ const Profile = (props) => {
           <Grid item container>
               <Grid item xs={12} sm={4}>
                 <Typography variant='h4' className='fortnite'>Wins</Typography>
-                <Typography variant='h5' className='fortnite'>{parseInt(stats.stats.all.overall.wins.toLocaleString())}</Typography>
+                <Typography variant='h5' className='fortnite'>{parseInt(stats?.stats.all.overall.wins.toLocaleString())}</Typography>
               </Grid>
               <Grid item xs={12} sm={4}>
                 <Typography variant='h4' className='fortnite'>Win Rate</Typography>
-                <Typography variant='h5' className='fortnite'>{stats.stats.all.overall.winRate}%</Typography>
+                <Typography variant='h5' className='fortnite'>{stats?.stats.all.overall.winRate}%</Typography>
               </Grid>
               <Grid item xs={12} sm={4}>
                 <Typography variant='h4' className='fortnite'>Matches</Typography>
-                <Typography variant='h5' className='fortnite'>{stats.stats.all.overall.matches.toLocaleString()}</Typography>
+                <Typography variant='h5' className='fortnite'>{stats?.stats.all.overall.matches.toLocaleString()}</Typography>
               </Grid>
               <Grid item xs={12} sm={4}>
                 <Typography variant='h4' className='fortnite'>Score</Typography>
-                <Typography variant='h5' className='fortnite'>{stats.stats.all.overall.score.toLocaleString()}</Typography>
+                <Typography variant='h5' className='fortnite'>{stats?.stats.all.overall.score.toLocaleString()}</Typography>
               </Grid>
               <Grid item xs={12} sm={4}>
                 <Typography variant='h4' className='fortnite'>Score Per Match</Typography>
-                <Typography variant='h5' className='fortnite'>{stats.stats.all.overall.scorePerMatch.toLocaleString()}</Typography>
+                <Typography variant='h5' className='fortnite'>{stats?.stats.all.overall.scorePerMatch.toLocaleString()}</Typography>
               </Grid>
               <Grid item xs={12} sm={4}>
                 <Typography variant='h4' className='fortnite'>Score Per Minute</Typography>
-                <Typography variant='h5' className='fortnite'>{stats.stats.all.overall.scorePerMin.toLocaleString()}</Typography>
+                <Typography variant='h5' className='fortnite'>{stats?.stats.all.overall.scorePerMin.toLocaleString()}</Typography>
               </Grid>
               <Grid item xs={12} sm={4}>
                 <Typography variant='h4' className='fortnite'>Players Outlived</Typography>
-                <Typography variant='h5' className='fortnite'>{stats.stats.all.overall.playersOutlived.toLocaleString()}</Typography>
+                <Typography variant='h5' className='fortnite'>{stats?.stats.all.overall.playersOutlived.toLocaleString()}</Typography>
               </Grid>
               <Grid item xs={12} sm={4}>
                 <Typography variant='h4' className='fortnite'>Kills per minute</Typography>
-                <Typography variant='h5' className='fortnite'>{stats.stats.all.overall.killsPerMin.toLocaleString()}</Typography>
+                <Typography variant='h5' className='fortnite'>{stats?.stats.all.overall.killsPerMin.toLocaleString()}</Typography>
               </Grid>
             </Grid>
         </Grid>
